@@ -28,6 +28,7 @@
           <li><a href="#concept" class="nav-link">CONCEPT</a></li>
           <li><a href="#menu" class="nav-link">MENU</a></li>
           <li><a href="#access" class="nav-link">ACCESS</a></li>
+          <li><a href="#contact" class="nav-link">お問い合わせ</a></li>
         </ul>
       </nav>
 
@@ -320,6 +321,39 @@
         </div>
       </div>
     </section>
+
+    <!-- ========== お問い合わせ ========== -->
+    <section class="section contact" id="contact">
+      <div class="container contact-inner">
+        <header class="section-head reveal">
+          <p class="section-eyebrow">CONTACT</p>
+          <h2 class="section-title">お問い合わせ</h2>
+          <p class="body-text">ご予約・ご質問・取材のご依頼など、お気軽にご連絡ください。</p>
+        </header>
+
+        <form class="contact-form reveal" id="contact-form" novalidate>
+          <div class="form-field">
+            <label for="name">お名前 <span class="required">必須</span></label>
+            <input type="text" id="name" name="name" autocomplete="name" placeholder="森 太郎">
+            <p class="error-message" id="name-error" role="alert"></p>
+          </div>
+
+          <div class="form-field">
+            <label for="email">メールアドレス <span class="required">必須</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="example@mail.com">
+            <p class="error-message" id="email-error" role="alert"></p>
+          </div>
+
+          <div class="form-field">
+            <label for="message">お問い合わせ内容 <span class="required">必須</span></label>
+            <textarea id="message" name="message" rows="6" placeholder="ご用件をご記入ください"></textarea>
+            <p class="error-message" id="message-error" role="alert"></p>
+          </div>
+
+          <button type="submit" class="btn btn-primary submit-btn">送信する</button>
+        </form>
+      </div>
+    </section>
   </main>
 
   <!-- ========== フッター ========== -->
@@ -331,6 +365,7 @@
           <li><a href="#concept">CONCEPT</a></li>
           <li><a href="#menu">MENU</a></li>
           <li><a href="#access">ACCESS</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
         </ul>
       </nav>
       <p class="copyright">© 2026 CAFÉ MORI. All rights reserved.<br>※本サイトの店舗情報はすべて架空のものです。</p>

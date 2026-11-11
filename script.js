@@ -134,6 +134,75 @@
     });
   });
 
+  /* ---------- お問い合わせフォーム（バリデーション） ---------- */
+  const contactForm = document.getElementById("contact-form");
+
+  if (contactForm) {
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const messageInput = document.getElementById("message");
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // 各フィールドのチェック。エラー文言を返す（問題なければ空文字）
+    function validateName() {
+      return nameInput.value.trim() === "" ? "お名前を入力してください。" : "";
+    }
+
+    function validateEmail() {
+      const value = emailInput.value.trim();
+      if (value === "") return "メールアドレスを入力してください。";
+      if (!emailPattern.test(value)) return "メールアドレスの形式が正しくありません。";
+      return "";
+    }
+
+    function validateMessage() {
+      return messageInput.value.trim() === "" ? "お問い合わせ内容を入力してください。" : "";
+    }
+
+    const fields = [
+      { input: nameInput, validate: validateName, error: document.getElementById("name-error") },
+      { input: emailInput, validate: validateEmail, error: document.getElementById("email-error") },
+      { input: messageInput, validate: validateMessage, error: document.getElementById("message-error") },
+    ];
+
+    function showError(field) {
+      const message = field.validate();
+      field.error.textContent = message;
+      field.input.setAttribute("aria-invalid", String(message !== ""));
+      field.input.closest(".form-field").classList.toggle("has-error", message !== "");
+      return message === "";
+    }
+
+    // 入力中は、エラーが出ているフィールドだけ再チェックする
+    fields.forEach(function (field) {
+      field.input.addEventListener("input", function () {
+        if (field.error.textContent !== "") {
+          showError(field);
+        }
+      });
+    });
+
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      let firstInvalid = null;
+      fields.forEach(function (field) {
+        const valid = showError(field);
+        if (!valid && !firstInvalid) {
+          firstInvalid = field.input;
+        }
+      });
+
+      if (firstInvalid) {
+        firstInvalid.focus();
+        return;
+      }
+
+      alert("送信しました");
+      contactForm.reset();
+    });
+  }
+
   /* ---------- ページ上部へ戻るボタン ---------- */
   backToTop.addEventListener("click", function (event) {
     event.preventDefault();
