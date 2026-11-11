@@ -970,6 +970,115 @@ button {
   }
 }
 
+/* ---------- 自己紹介ページ ---------- */
+.profile-page {
+  background: var(--c-cream);
+  color: var(--c-text);
+  font-family: var(--font-ja);
+}
+
+.profile {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 72px 16px 56px;
+}
+
+.profile-card {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.profile-avatar {
+  display: grid;
+  place-items: center;
+  width: 112px;
+  height: 112px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  background: var(--c-moss);
+  color: var(--c-cream);
+  font-family: var(--font-en);
+  font-size: 48px;
+  box-shadow: var(--shadow-soft);
+}
+
+.profile-label,
+.profile-heading {
+  font-family: var(--font-en);
+  letter-spacing: 0.2em;
+  color: var(--c-moss-deep);
+}
+
+.profile-label {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.profile-name {
+  font-family: var(--font-ja-serif);
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--c-espresso);
+}
+
+.profile-name-en {
+  font-family: var(--font-en);
+  font-style: italic;
+  color: var(--c-muted);
+  margin-bottom: 20px;
+}
+
+.profile-lead,
+.profile-text {
+  line-height: 2;
+}
+
+.profile-section {
+  padding: 32px 0;
+  border-top: 1px solid var(--c-sand);
+}
+
+.profile-heading {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.profile-row {
+  display: flex;
+  gap: 16px;
+  padding: 10px 0;
+}
+
+.profile-row dt {
+  flex: 0 0 96px;
+  color: var(--c-muted);
+}
+
+.profile-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+}
+
+.profile-tag {
+  padding: 6px 16px;
+  border-radius: var(--radius);
+  background: var(--c-sand);
+  color: var(--c-bark);
+  font-size: 14px;
+}
+
+.profile-back {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.profile-back a {
+  color: var(--c-moss-deep);
+}
+
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   html {
