@@ -971,12 +971,6 @@ button {
 }
 
 /* ---------- 自己紹介ページ ---------- */
-.profile-page {
-  background: var(--c-cream);
-  color: var(--c-text);
-  font-family: var(--font-ja);
-}
-
 .profile {
   max-width: 640px;
   margin: 0 auto;
